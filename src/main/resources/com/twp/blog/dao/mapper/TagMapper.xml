@@ -11,4 +11,15 @@
         (select tag_id from ms_article_tag where article_id=#{articleId})
 
     </select>
+    <select id="findHotsTagIds" parameterType="int" resultType="java.lang.Long">
+        select tag_id from ms_article_tag group by tag_id order by count(*) desc limit #{limit}
+
+    </select>
+    <select id="findTagsByTagsIds"  parameterType="list" resultType="com.twp.blog.dao.pojo.Tag">
+        select  id,tag_name as tagName from ms_tag
+        where id in
+        <foreach collection="tagIds" item="tagId" separator="," open="(" close=")">
+            #{tagId}
+        </foreach>
+    </select>
 </mapper>
