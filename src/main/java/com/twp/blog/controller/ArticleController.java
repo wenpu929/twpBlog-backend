@@ -32,4 +32,23 @@ public class ArticleController {
         return articleService.hotArticle(limit);
 
     }
+/*
+* 最新文章*/
+    @PostMapping("new")
+
+    public Result newArticle(){
+        int limit =5;
+
+        return articleService.newArticle(limit);
+
+    }
+    //文章归档
+    @PostMapping("listArchives")
+
+    public Result listArchives(){
+        //int limit =5;
+
+        return articleService.listArchives();
+
+    }
 }

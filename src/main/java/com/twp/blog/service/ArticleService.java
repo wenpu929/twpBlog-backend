@@ -12,4 +12,8 @@ public interface ArticleService {
         /*
         * 最热文章*/
     Result hotArticle(int limit);
+
+    Result newArticle(int limit);
+
+    Result listArchives();
 }
