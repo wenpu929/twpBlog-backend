@@ -9,7 +9,7 @@ class BlogApplicationTests {
     private  String salt = "mszlu!@#";
     @Test
     void contextLoads() {
-        String s= DigestUtils.md5Hex("abc123"+salt);
+        String s= DigestUtils.md5Hex("123456"+salt);
         System.out.println(s);
     }
 
